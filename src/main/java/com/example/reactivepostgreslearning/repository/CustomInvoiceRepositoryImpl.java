@@ -13,7 +13,7 @@ public class CustomInvoiceRepositoryImpl implements CustomInvoiceRepository {
 
     public Flux<Invoice> findAllInvoicesWithCustomer (int customerId) {
         String query = "SELECT \n" +
-                "c.id AS customer_id, c.name AS customer_name, i.id AS invoice_id, i.invoice_no \n" +
+                "c.id AS customer_id, c.name AS customer_name, c.age AS customer_age, i.id AS invoice_id, i.invoice_no \n" +
                 "FROM invoice i \n" +
                 "INNER JOIN customer c \n" +
                 "ON c.id=i.customer_id\n" +

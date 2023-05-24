@@ -13,6 +13,7 @@ public class InvoiceMapper implements BiFunction<Row, Object, Invoice> {
 
         Integer customerId = row.get("customer_id", Integer.class);
         String customerName = row.get("customer_name", String.class);
+        Integer customerAge = row.get("customer_age", Integer.class);
         Integer invoiceId = row.get("invoice_id", Integer.class);
         String invoiceNo = row.get("invoice_no", String.class);
 
@@ -20,6 +21,7 @@ public class InvoiceMapper implements BiFunction<Row, Object, Invoice> {
                 .builder()
                 .name(customerName)
                 .id(customerId)
+                .age(customerAge)
                 .build();
 
         return Invoice
